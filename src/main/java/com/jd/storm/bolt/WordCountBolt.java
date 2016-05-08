@@ -19,7 +19,7 @@ public class WordCountBolt implements IRichBolt {
     Map<String,Integer> counters;
     private OutputCollector outputCollector;
     public void prepare(Map map, TopologyContext topologyContext, OutputCollector outputCollector) {
-        outputCollector = outputCollector;
+        this.outputCollector = outputCollector;
         counters = new HashMap<String, Integer>();
     }
 
@@ -57,7 +57,7 @@ public class WordCountBolt implements IRichBolt {
         }
 
         word = "The first " + num + ": "+ word;
-        outputCollector.emit(new Values(word));
+        this.outputCollector.emit(new Values(word));
     }
 
     public void cleanup() {

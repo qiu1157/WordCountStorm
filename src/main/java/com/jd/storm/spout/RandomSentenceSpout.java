@@ -23,7 +23,7 @@ public class RandomSentenceSpout extends BaseRichSpout {
     }
 
     public void open(Map map, TopologyContext topologyContext, SpoutOutputCollector spoutOutputCollector) {
-        spoutOutputCollector = spoutOutputCollector;
+        this.spoutOutputCollector = spoutOutputCollector;
         random = new Random();
     }
 
